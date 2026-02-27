@@ -1,19 +1,21 @@
+
 <!DOCTYPE html>
-<html lang="ceb">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freddireck John | Digital Craftsman</title>
-    <link rel="icon" type="image/x-icon" href="rrrr.jpg">
+    <title>Freddireck John | Student Developer Portfolio</title>
+    
+    <link rel="icon" type="image/png" href="rrrr.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #10b981; 
+            --primary: #8b5cf6; /* Modern Purple Accent */
             --dark: #0f172a;    
-            --bg: #f0fdfa;      
-            --card: #ffffff;
+            --bg: #f8fafc;      
             --glass: rgba(255, 255, 255, 0.85);
         }
 
@@ -21,7 +23,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
+            background: linear-gradient(135deg, #f8fafc 0%, #ede9fe 100%);
             color: var(--dark);
             margin: 0;
             overflow-x: hidden;
@@ -29,54 +31,33 @@
 
         /* --- NAVIGATION --- */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; position: sticky; top: 0; z-index: 1000;
+            background: var(--glass); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
         }
-
-        .logo { font-family: 'Poppins'; font-weight: 900; font-size: 1.5rem; color: var(--dark); text-decoration: none; }
-
+        .logo { font-family: 'Poppins'; font-weight: 900; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
         .nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
         .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
         /* --- HERO SECTION --- */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 100px 10%;
-            min-height: 90vh;
-            gap: 50px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 80px 10%; min-height: 90vh; gap: 50px;
         }
-
         .hero-text { flex: 1; }
-        .hero-text p { font-weight: 700; font-size: 1.1rem; color: var(--primary); margin: 0; letter-spacing: 2px; }
-        .hero-text h1 { 
-            font-family: 'Poppins'; 
-            font-size: clamp(3rem, 7vw, 5rem); 
-            line-height: 0.9; 
-            margin: 20px 0; 
-            letter-spacing: -2px;
-        }
-
+        .hero-text p { font-weight: 800; color: var(--primary); letter-spacing: 3px; margin-bottom: 10px; font-size: 0.85rem; }
+        .hero-text h1 { font-family: 'Poppins'; font-size: clamp(3rem, 7vw, 5rem); line-height: 1; margin: 20px 0; color: var(--dark); }
+        
         .hero-img { flex: 1; display: flex; justify-content: center; }
-        .avatar-morph {
-            width: 350px;
-            height: 350px;
-            background: var(--primary);
+        .profile-blob {
+            width: 380px; height: 380px;
+            background: url('rrrr.jpg') center/cover no-repeat;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            border: 5px solid var(--dark);
-            overflow: hidden;
+            border: 8px solid var(--primary);
             animation: morphing 8s ease-in-out infinite;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
         }
 
         @keyframes morphing {
@@ -85,91 +66,39 @@
         }
 
         /* --- PROJECTS SECTION --- */
-        #projects { padding: 100px 10%; }
+        #projects { padding: 100px 10%; background: white; border-radius: 60px 60px 0 0; }
         .section-tag { color: var(--primary); font-weight: 800; letter-spacing: 3px; font-size: 0.8rem; display: block; margin-bottom: 10px; }
-        .section-header { font-family: 'Poppins'; font-size: 3.5rem; margin-bottom: 60px; }
+        .section-header { font-family: 'Poppins'; font-size: 3.5rem; margin-bottom: 60px; color: var(--dark); }
 
-        .project-row {
-            display: flex;
-            align-items: center;
-            gap: 80px;
-            margin-bottom: 120px;
-        }
-
+        .project-row { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
         .project-row:nth-child(even) { flex-direction: row-reverse; }
-
-        .project-visual {
-            flex: 1.5;
-            height: 400px;
-            background: #e2e8f0;
-            border-radius: 40px;
-            box-shadow: 20px 20px 0px rgba(16, 185, 129, 0.1);
-            transition: 0.5s;
-        }
-
-        .project-row:hover .project-visual { transform: scale(1.02); }
+        .project-visual { flex: 1.5; height: 380px; background: #f3e8ff; border-radius: 40px; overflow: hidden; border: 1px solid rgba(139, 92, 246, 0.1); }
+        .project-visual img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .project-row:hover img { transform: scale(1.05); }
 
         .project-detail { flex: 1; }
-        .project-detail h3 { font-family: 'Poppins'; font-size: 2.5rem; margin: 10px 0; }
-        .tech-pill { 
-            display: inline-block; 
-            padding: 6px 16px; 
-            background: #d1fae5; 
-            color: #065f46; 
-            border-radius: 50px; 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            margin: 0 8px 10px 0;
-            text-transform: uppercase;
-        }
+        .project-detail h3 { font-family: 'Poppins'; font-size: 2.2rem; margin: 10px 0; }
+        .tech-pill { display: inline-block; padding: 6px 18px; background: #ede9fe; color: #6d28d9; border-radius: 50px; font-size: 0.7rem; font-weight: 800; margin-right: 8px; text-transform: uppercase; }
 
-        /* --- ABOUT (DARK MODE STYLE) --- */
-        #about { 
-            background: var(--dark); 
-            color: white; 
-            padding: 120px 10%; 
-            border-radius: 80px 80px 0 0; 
-        }
+        /* --- ABOUT SECTION (DARK) --- */
+        #about { background: var(--dark); color: white; padding: 120px 10%; border-radius: 80px 80px 0 0; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .stat-grid { display: flex; gap: 40px; margin-top: 40px; }
-        .stat-card h2 { font-size: 4rem; color: var(--primary); margin: 0; font-family: 'Poppins'; }
-        .stat-card p { opacity: 0.6; font-weight: 600; }
+        .stat-card h2 { font-size: 3.5rem; color: var(--primary); margin: 0; font-family: 'Poppins'; }
+        .stat-card p { opacity: 0.6; font-size: 0.9rem; font-weight: 600; }
 
-        /* --- CONTACT (MODERN) --- */
-        #contact { padding: 120px 10%; text-align: center; background: white; }
-        .contact-wrap { max-width: 900px; margin: 0 auto; }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 60px 0;
-        }
-        .contact-box {
-            padding: 50px;
-            border-radius: 40px;
-            text-decoration: none;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-        .mail-box { background: #fff5f5; color: #d44638; }
-        .fb-box { background: #f0f4ff; color: #1877f2; }
-        
-        .contact-box:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); }
-        .contact-box i { font-size: 3rem; margin-bottom: 15px; }
-        .contact-box b { font-size: 1.5rem; font-family: 'Poppins'; }
+        /* --- CONTACT --- */
+        #contact { padding: 100px 10%; text-align: center; background: white; }
+        .contact-card { display: inline-block; padding: 30px 50px; border-radius: 30px; background: #f5f3ff; color: var(--primary); text-decoration: none; transition: 0.4s; border: 1px solid transparent; margin: 10px; }
+        .contact-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15); border-color: var(--primary); }
 
-        /* --- ANIMATIONS --- */
-        .reveal { opacity: 0; transform: translateY(50px); transition: 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
+        /* Scroll Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
             .hero, .project-row, .about-grid { flex-direction: column; text-align: center; }
             .project-row:nth-child(even) { flex-direction: column; }
-            .hero-img { order: -1; }
-            .avatar-morph { width: 280px; height: 280px; }
+            .profile-blob { width: 300px; height: 300px; }
             .nav-links { display: none; }
         }
     </style>
@@ -188,113 +117,95 @@
 
     <section class="hero">
         <div class="hero-text">
-            <p>COMPUTER PROGGRAMING STUDENT </p>
+            <p>COMPUTER PROGRAMMING STUDENT</p>
             <h1>LEARNING<br><span style="color: var(--primary);">- THE ART OF</span><br>CODE.</h1>
-            <p style="max-width: 500px; line-height: 1.6; opacity: 0.8;">
+            <p style="opacity: 0.7; line-height: 1.8; max-width: 500px;">
                 I'm a student currently exploring the world of programming. I enjoy building projects while sharpening my skills in HTML, CSS, and Logic.
             </p>
             <br>
-            <a href="#projects" style="background: var(--dark); color: white; padding: 18px 35px; border-radius: 15px; text-decoration: none; font-weight: 800; display: inline-block;">SEE MY PROGRESS ↓</a>
+            <a href="#projects" style="background: var(--primary); color: white; padding: 18px 40px; border-radius: 20px; text-decoration: none; font-weight: 800; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);">SEE MY PROGRESS ↓</a>
         </div>
         <div class="hero-img">
-            <div class="avatar-morph">
-                <img src="rrrr.jpg" alt="Avatar" style="width:100%; height:100%; object-fit:cover;">
-            </div>
+            <div class="profile-blob"></div>
         </div>
     </section>
 
     <section id="projects" class="reveal">
         <span class="section-tag">MY CREATIVE WORKS</span>
         <h2 class="section-header">Stuff I've Built</h2>
-    
+
         <div class="project-row">
             <div class="project-visual">
-                <img src="III.png" style="width:100%; height:100%; object-fit:cover; border-radius: 40px;">
+                <img src="III.png" alt="Lyrics Project Screenshot">
             </div>
             <div class="project-detail">
-                <span class="tech-pill">SONGWRITING</span><span class="tech-pill">HTML</span>
-                <h3>Original Lyrics Collection</h3>
+                <span class="tech-pill">CREATIVE</span><span class="tech-pill">HTML</span>
+                <h3>Lyrics Collection</h3>
                 <p>A personal collection of song lyrics and compositions, organized through a custom web layout for a better reading experience.</p>
-                <a href="lyrics.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; font-size: 1.1rem;">READ LYRICS →</a>
+                <a href="lyrics.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none;">READ LYRICS →</a>
             </div>
         </div>
-    
+
         <div class="project-row">
             <div class="project-visual">
-                <img src="UUUU.png" style="width:100%; height:100%; object-fit:cover; border-radius: 40px;">
+                <img src="ppp.png" alt="Display Project Screenshot">
             </div>
             <div class="project-detail">
                 <span class="tech-pill">HTML</span><span class="tech-pill">UI/UX</span>
                 <h3>Dynamic Display System</h3>
-                <p>Developed using `display.html` to showcase a clean and interactive visual presentation of data and images.</p>
-                <a href="display.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; font-size: 1.1rem;">VIEW PROJECT →</a>
+                <p>Developed to showcase a clean and interactive visual presentation of data. Focused on modern web layout techniques.</p>
+                <a href="login3.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none;">VIEW PROJECT →</a>
             </div>
         </div>
-    
+
         <div class="project-row">
             <div class="project-visual">
-                <img src="BBBB.png" style="width:100%; height:100%; object-fit:cover; border-radius: 40px;">
+                <img src="aaa.png" alt="Login Project Screenshot">
             </div>
             <div class="project-detail">
                 <span class="tech-pill">FORMS</span><span class="tech-pill">CSS</span>
                 <h3>Secure Login Interface</h3>
-                <p>This project features `log in.html` and `login2.html`, focusing on user authentication design and form validation.</p>
-                <a href="log in.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; font-size: 1.1rem;">VIEW PROJECT →</a>
+                <p>An exploration of user authentication design and form validation, featuring a clean and modern user interface.</p>
+                <a href="login2.html" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none;">VIEW INTERFACE →</a>
             </div>
         </div>
     </section>
 
-
-   <section id="about" class="reveal">
+    <section id="about" class="reveal">
         <div class="about-grid">
             <div class="about-text">
                 <span class="section-tag">MY JOURNEY</span>
                 <h2 class="section-header" style="color: white;">Student Life</h2>
                 <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">
                     I am **Freddireck John**, an IT student who is passionate about learning how things work behind the screen. 
-                    Right now, I am focusing on mastering the basics of web development and songwriting. Every file in this portfolio represents a step forward in my learning journey.
+                    Right now, I am focusing on mastering the basics of web development and songwriting. Every project here marks a step forward in my learning journey.
                 </p>
-                
-                <div class="stat-grid">
-                    <div class="stat-card">
-                        <h2>Learning</h2>
-                        <p>CURRENT STATUS</p>
-                    </div>
-                    <div class="stat-card">
-                        <h2>100%</h2>
-                        <p>EAGER TO LEARN</p>
-                    </div>
+                <div class="stat-grid" style="display:flex; gap:30px; margin-top:30px;">
+                    <div class="stat-card"><h2>Eager</h2><p>TO LEARN</p></div>
+                    <div class="stat-card"><h2>100%</h2><p>DEDICATION</p></div>
                 </div>
             </div>
             <div class="about-visual">
-                <img src="ffff.jpg" alt="Freddireck" style="width:100%; border-radius: 50px; border: 5px solid var(--primary);">
+                <img src="ffff.jpg" alt="Freddireck Profile Image" style="width:100%; border-radius: 40px; border: 5px solid var(--primary);">
             </div>
-        </div>
-    </section> 
-
-    <section id="contact" class="reveal">
-        <div class="contact-wrap">
-            <span class="section-tag">READY TO START?</span>
-            <h2 class="section-header" style="font-size: 4.5rem;">Let's Talk.</h2>
-            
-            <div class="contact-grid">
-                <a href="mailto:efreddireckjohn@gmail.com" class="contact-box mail-box">
-                    <i class="fas fa-envelope"></i>
-                    <b>Gmail</b>
-                    <p>freddireck@gmail.com</p>
-                </a>
-                <a href="https://www.facebook.com/freddireck.john.egonia.2027" target="_blank" class="contact-box fb-box">
-                    <i class="fab fa-facebook-f"></i>
-                    <b>Facebook</b>
-                    <p>Connect with me</p>
-                </a>
-            </div>
-
-            <p style="opacity: 0.4; font-weight: 600; margin-top: 40px;">&copy; 2026 FREDDIRECK JOHN. Gihimo para sa Excellence.</p>
         </div>
     </section>
 
+    <section id="contact" class="reveal">
+        <h2 class="section-header">Let's Connect.</h2>
+        <div style="margin-bottom: 30px;">
+            <a href="mailto:efreddireckjohn@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i> &nbsp; <b>Email Me</b>
+            </a>
+            <a href="https://www.facebook.com/freddireck.john.egonia.2027" target="_blank" class="contact-card">
+                <i class="fab fa-facebook"></i> &nbsp; <b>Facebook</b>
+            </a>
+        </div>
+        <p style="opacity: 0.4; margin-top: 50px; font-weight: 600;">&copy; 2026 FREDDIRECK JOHN. Built with Excellence.</p>
+    </section>
+
     <script>
+        // Function to make sections pop up when scrolling
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -306,8 +217,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal();
+        reveal(); // Run once on load
     </script>
-
 </body>
 </html>
