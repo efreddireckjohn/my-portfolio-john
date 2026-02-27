@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-container {
+            display: flex;
+            width: 90%;
+            max-width: 900px;
+            height: 600px;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+        /* KINI ANG PARA SA PIC SA KILID */
+        .image-side {
+            flex: 1;
+            background-image: url('gggg.jpg'); /* Siguroha nga husto ang ngalan sa imong picture file */
+            background-size: cover;
+            background-position: center;
+            display: none; /* Default: tago sa gamay nga screen */
+        }
+        @media (min-width: 768px) {
+            .image-side { display: block; }
+        }
+        .form-side {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+        label { font-size: 0.75rem; font-weight: bold; color: #bbb; margin-top: 8px; display: block; }
+        .form-control { background: #fff; color: #000; border: none; margin-bottom: 5px; }
+        h3 { font-weight: bold; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="image-side"></div>
+    
+
+    <div class="form-side">
+        <h3>Create Account</h3>
+        
+        <label>Firstname</label>
+        <input type="text" id="fname" class="form-control" placeholder="Enter Firstname">
+        
+        <label>Middle Name</label>
+        <input type="text" id="mname" class="form-control" placeholder="Enter Middle Name">
+        
+        <label>Last Name</label>
+        <input type="text" id="lname" class="form-control" placeholder="Enter Last Name">
+        
+        <label>Grade Level</label>
+        <select id="grade" class="form-control">
+            <option value="">Select Grade Level</option>
+            <option value="11">Grade 11</option>
+            <option value="12">Grade 12</option>
+        </select>
+        
+        <label>Section</label>
+        <select id="sec" class="form-control">
+            <option value="">Select Section</option>
+            <option value="TVL-11">TVL-11</option>
+            <option value="STEM-12">STEM-12</option>
+        </select>
+        
+        <label>Username</label>
+        <input type="text" id="un" class="form-control" placeholder="Create Username">
+        
+        <label>Password</label>
+        <input type="password" id="p1" class="form-control" placeholder="********">
+        
+        <label>Confirm Password</label>
+        <input type="password" id="p2" class="form-control" placeholder="********">
+
+        <button type="button" class="btn btn-primary w-100 mt-4" onclick="saveData()">REGISTER NOW</button>
+        <div class="form-check mt-2 mb-3">
+            <input class="form-check-input" type="checkbox" id="showPass" onclick="togglePass()">
+            <label class="form-check-label text-white" for="showPass" style="font-size: 0.8rem; margin-top: 0;">
+                Show Password
+            </label>
+        </div>
+    </div>
+    
+
+<script>
+function saveData() {
+    const fn = document.getElementById("fname").value;
+    const ln = document.getElementById("lname").value;
+    const gr = document.getElementById("grade").value;
+    const sc = document.getElementById("sec").value;
+    const pw1 = document.getElementById("p1").value;
+    const pw2 = document.getElementById("p2").value;
+
+    if (fn === "" || ln === "" || pw1 === "") {
+        alert("Palihog ayaw biyai nga blanko ang mga fields.");
+        return;
+    }
+
+    if (pw1 !== pw2) {
+        alert("Dili parehas ang password!");
+        return;
+    }
+
+    const studentInfo = {
+        fname: fn,
+        lname: ln,
+        grade: gr,
+        section: sc
+    };
+
+    localStorage.setItem("studentData", JSON.stringify(studentInfo));
+    window.location.href = "display.html";
+}
+function togglePass() {
+    // Kuhaon ang duha ka password fields
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let check = document.getElementById("showPass");
+
+    // I-check kung naka-check ang box
+    if (check.checked) {
+        p1.type = "text";
+        p2.type = "text";
+    } else {
+        p1.type = "password";
+        p2.type = "password";
+    }
+}
+</script>
+
+</body>
+</html>
