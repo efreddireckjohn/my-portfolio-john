@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #121212; color: white; display: flex; align-items: center; height: 100vh; }
+        .info-card { background: white; color: black; padding: 40px; border-radius: 15px; margin: auto; width: 400px; }
+    </style>
+</head>
+<body>
+    <div class="info-card shadow-lg">
+        <h2 class="text-center text-primary">Student Info</h2>
+        <hr>
+        <p><strong>Firstname:</strong> <span id="outFname"></span></p>
+        <p><strong>Lastname:</strong> <span id="outLname"></span></p>
+        <p><strong>Grade:</strong> <span id="outGrade"></span></p>
+        <p><strong>Section:</strong> <span id="outSec"></span></p>
+        
+        <button class="btn btn-danger w-100 mt-3" onclick="window.location.href='login3.html'">Back</button>
+    </div>
+    
+    <script>
+        let data = localStorage.getItem("studentData");
+        if (data) {
+            let info = JSON.parse(data);
+            document.getElementById("outFname").innerText = info.fname;
+            document.getElementById("outLname").innerText = info.lname;
+            document.getElementById("outGrade").innerText = info.grade;
+            document.getElementById("outSec").innerText = info.section;
+        }
+        function togglePass() {
+    // Kuhaon ang duha ka password fields
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let check = document.getElementById("showPass");
+
+    // I-check kung naka-check ang box
+    if (check.checked) {
+        p1.type = "text";
+        p2.type = "text";
+    } else {
+        p1.type = "password";
+        p2.type = "password";
+    }
+}
+    </script>
+</body>
+</html>
